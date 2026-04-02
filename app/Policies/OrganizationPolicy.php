@@ -12,6 +12,10 @@ class OrganizationPolicy
      */
     public function viewAny(User $user): bool
     {
+        if ($user->hasPermissionTo('organization.view_any')) {
+            return true;
+        }
+
         return false;
     }
 
@@ -20,6 +24,10 @@ class OrganizationPolicy
      */
     public function view(User $user, Organization $organization): bool
     {
+        if ($user->hasPermissionTo('organization.view')) {
+            return true;
+        }
+
         return false;
     }
 
@@ -28,6 +36,10 @@ class OrganizationPolicy
      */
     public function create(User $user): bool
     {
+        if ($user->hasPermissionTo('organization.create')) {
+            return true;
+        }
+
         return false;
     }
 
@@ -36,6 +48,10 @@ class OrganizationPolicy
      */
     public function update(User $user, Organization $organization): bool
     {
+        if ($user->hasPermissionTo('organization.update')) {
+            return true;
+        }
+
         return false;
     }
 
@@ -44,6 +60,10 @@ class OrganizationPolicy
      */
     public function delete(User $user, Organization $organization): bool
     {
+        if ($user->hasPermissionTo('organization.delete')) {
+            return true;
+        }
+
         return false;
     }
 
@@ -52,6 +72,10 @@ class OrganizationPolicy
      */
     public function restore(User $user, Organization $organization): bool
     {
+        if ($user->hasPermissionTo('organization.restore')) {
+            return true;
+        }
+
         return false;
     }
 
